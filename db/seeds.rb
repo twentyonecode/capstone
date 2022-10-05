@@ -12,7 +12,6 @@ gyms = [
         deal:"25% off supplements!!",
         deal_code: "BDYT0025",
         image: "https://bodytech.com.co/uploads/post/291be070af1d4989aef6367e4714c677/piloto-reapertura-pereira-1_1920x854.jpg",
-        user_id: 1
     },
 
     {
@@ -28,7 +27,6 @@ gyms = [
         deal: "Free Ginger smoothie weekly!",
         deal_code: "BB576SDCA",
         image: "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?ixlib=rb-1.2.1&ixid=MnwxM[…]90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80",
-        user_id: 2
     },
 
     {
@@ -44,7 +42,6 @@ gyms = [
         deal: "50% off gym sign up fee !!!",
         deal_code: "GAINS244",
         image: "https://images.unsplash.com/photo-1599058917212-d750089bc07e?ixlib=rb-1.2.1&ixid=MnwxM[…]90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80",
-        user_id: 3
     },
 
 
