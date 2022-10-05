@@ -1,5 +1,6 @@
-User.create email:"a@a.a" ,  password:"123456", password_confirmati
-on:"123456"
+User.create email:"a@a.a" ,  password:"123456", password_confirmation:"123456"
+User.create email:"b@b.b" ,  password:"123456", password_confirmation:"123456"
+User.create email:"c@c.c" ,  password:"123456", password_confirmation:"123456"
 
 gyms = [
     {
@@ -14,7 +15,7 @@ gyms = [
         email:"BodyTech051@bodttech.com",
         deal:"25% off supplements!!",
         deal_code: "BDYT0025",
-        image: "https://bodytech.com.co/uploads/post/291be070af1d4989aef6367e4714c677/piloto-reapertura-pereira-1_1920x854.jpg",
+        image: "https://bodytech.com.co/uploads/post/291be070af1d4989aef6367e4714c677/piloto-reapertura-pereira-1_1920x854.jpg"
     },
 
     {
@@ -29,7 +30,7 @@ gyms = [
         email:"Bicepbros675@bicepbros.com",
         deal: "Free Ginger smoothie weekly!",
         deal_code: "BB576SDCA",
-        image: "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?ixlib=rb-1.2.1&ixid=MnwxM[…]90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80",
+        image: "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?ixlib=rb-1.2.1&ixid=MnwxM[…]90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80"
     },
 
     {
@@ -44,15 +45,21 @@ gyms = [
         email:"GainsGym@gains.com",
         deal: "50% off gym sign up fee !!!",
         deal_code: "GAINS244",
-        image: "https://images.unsplash.com/photo-1599058917212-d750089bc07e?ixlib=rb-1.2.1&ixid=MnwxM[…]90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80",
-    },
+        image: "https://images.unsplash.com/photo-1599058917212-d750089bc07e?ixlib=rb-1.2.1&ixid=MnwxM[…]90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
+    }
 
 
 ]
 
+users = User.all
 
 
-gyms.each do |each_gym|
-    Gym.create each_gym
-    puts "creating gym #{each_gym}"
+users.each do |each_user|
+    gyms.each do |each_gym|
+    each_user.gyms.create each_gym
+        puts "creating gym #{each_gym}"
+    end
 end
+
+p User.all 
+p Gym.all
