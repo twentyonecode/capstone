@@ -1,3 +1,6 @@
+User.create email:"a@a.a" ,  password:"123456", password_confirmati
+on:"123456"
+
 gyms = [
     {
         gym_name: "Body Tech",
