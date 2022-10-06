@@ -1,8 +1,9 @@
 import React, {useState} from "react"
-import Header from "./components/Header"
 import GymIndex from "./pages/GymIndex"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import mockGyms from "./mockGyms"
+import Header from "./components/Header"
+import  Home  from "./pages/Home"
 
 const App = (props) => {
 
@@ -24,7 +25,7 @@ const App = (props) => {
     <BrowserRouter>
       <Header {...props} />
       <Routes>
-        {/* <Route path="/" element={<Home />} /> */}
+        <Route path="/" element={<Home />} />
         <Route path="/gymindex" element={<GymIndex gyms={gyms} />} />
       </Routes>
     </BrowserRouter>
