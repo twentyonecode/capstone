@@ -19,12 +19,9 @@ RSpec.describe "Gyms", type: :request do
         deal_code: "BDYT0025",
         image: "https://bodytech.com.co/uploads/post/291be070af1d4989aef6367e4714c677/piloto-reapertura-pereira-1_1920x854.jpg"
       )
-      p Gym.first
       get '/gyms'
 
       gym = JSON.parse(response.body)
-      p gym
-
       expect(response).to have_http_status(200)
       expect(gym.length).to eq 1
 

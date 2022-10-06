@@ -3,4 +3,10 @@ class GymsController < ApplicationController
         gyms = Gym.all  
         render json: gyms
     end
+
+    def create
+    end
+
+    def update
+    end
 end
