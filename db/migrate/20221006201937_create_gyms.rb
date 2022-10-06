@@ -13,7 +13,7 @@ class CreateGyms < ActiveRecord::Migration[7.0]
       t.string :deal
       t.string :deal_code
       t.text :image
-      t.integer :user_id
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
