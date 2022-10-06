@@ -1,4 +1,6 @@
-class GymController < ApplicationController
-  def index
-  end
+class GymsController < ApplicationController
+    def index
+        gyms = Gym.All  
+        render json: gyms
+    end
 end
