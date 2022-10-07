@@ -129,6 +129,7 @@ RSpec.describe Gym, type: :model do
     )  
     expect(gym.errors[:city]).to_not be_empty
   end
+  
   it "should validate state" do
     user = User.create email:"a@a.a", password: "123456", password_confirmation:"123456"
     gym = user.gyms.create(
