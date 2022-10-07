@@ -94,4 +94,493 @@ RSpec.describe "Gyms", type: :request do
       expect(json["deal_code"]).to include("can't be blank")
     end
   end
+
+  describe "PATCH /update" do 
+    it "updates a gym" do
+      user = User.create email:"a@a.a" ,  password:"123456", password_confirmation:"123456"
+      gym = user.gyms.create(
+        gym_name: 'Body Tech',
+        store_code: '051',
+        hours_of_operations: 'string',
+        phone_number: '875564036',
+        features: "Sauna, Daycare, Yoga",
+        street: '245 bodylane',
+        city: "Pittsburg",
+        state: "PA",
+        email: "BodyTech051@bodytect.com",
+        deal: "25% off supplements!!",
+        deal_code: "BDYT0025",
+        image: "https://bodytech.com.co/uploads/post/291be070af1d4989aef6367e4714c677/piloto-reapertura-pereira-1_1920x854.jpg"
+      )
+
+      gym_params = {
+        gym:{
+        gym_name: 'Body Fit',
+        store_code: '051',
+        hours_of_operations: 'string',
+        phone_number: '875564036',
+        features: "Sauna, Daycare, Yoga",
+        street: '245 bodylane',
+        city: "Pittsburg",
+        state: "PA",
+        email: "BodyTech051@bodytect.com",
+        deal: "25% off supplements!!",
+        deal_code: "BDYT0025",
+        image: "https://bodytech.com.co/uploads/post/291be070af1d4989aef6367e4714c677/piloto-reapertura-pereira-1_1920x854.jpg",
+        user_id: user.id
+        }
+      }
+
+      patch "/gyms/#{gym.id}", params: gym_params
+      expect(response).to have_http_status(200)
+      gym = Gym.first
+      expect(gym.gym_name).to eq "Body Fit"
+    end
+
+    it "updates a gym store_code" do
+      user = User.create email:"a@a.a" ,  password:"123456", password_confirmation:"123456"
+      gym = user.gyms.create(
+        gym_name: 'Body Tech',
+        store_code: '051',
+        hours_of_operations: 'string',
+        phone_number: '875564036',
+        features: "Sauna, Daycare, Yoga",
+        street: '245 bodylane',
+        city: "Pittsburg",
+        state: "PA",
+        email: "BodyTech051@bodytect.com",
+        deal: "25% off supplements!!",
+        deal_code: "BDYT0025",
+        image: "https://bodytech.com.co/uploads/post/291be070af1d4989aef6367e4714c677/piloto-reapertura-pereira-1_1920x854.jpg"
+      )
+
+      gym_params = {
+        gym:{
+        gym_name: 'Body Tech',
+        store_code: '000',
+        hours_of_operations: 'string',
+        phone_number: '875564036',
+        features: "Sauna, Daycare, Yoga",
+        street: '245 bodylane',
+        city: "Pittsburg",
+        state: "PA",
+        email: "BodyTech051@bodytect.com",
+        deal: "25% off supplements!!",
+        deal_code: "BDYT0025",
+        image: "https://bodytech.com.co/uploads/post/291be070af1d4989aef6367e4714c677/piloto-reapertura-pereira-1_1920x854.jpg",
+        user_id: user.id
+        }
+      }
+
+      patch "/gyms/#{gym.id}", params: gym_params
+      expect(response).to have_http_status(200)
+      gym = Gym.first
+      expect(gym.store_code).to eq '000'
+    end
+    it "updates a gym hours_of_operations" do
+      user = User.create email:"a@a.a" ,  password:"123456", password_confirmation:"123456"
+      gym = user.gyms.create(
+        gym_name: 'Body Tech',
+        store_code: '051',
+        hours_of_operations: 'string',
+        phone_number: '875564036',
+        features: "Sauna, Daycare, Yoga",
+        street: '245 bodylane',
+        city: "Pittsburg",
+        state: "PA",
+        email: "BodyTech051@bodytect.com",
+        deal: "25% off supplements!!",
+        deal_code: "BDYT0025",
+        image: "https://bodytech.com.co/uploads/post/291be070af1d4989aef6367e4714c677/piloto-reapertura-pereira-1_1920x854.jpg"
+      )
+
+      gym_params = {
+        gym:{
+        gym_name: 'Body Tech',
+        store_code: '000',
+        hours_of_operations: 'strings',
+        phone_number: '875564036',
+        features: "Sauna, Daycare, Yoga",
+        street: '245 bodylane',
+        city: "Pittsburg",
+        state: "PA",
+        email: "BodyTech051@bodytect.com",
+        deal: "25% off supplements!!",
+        deal_code: "BDYT0025",
+        image: "https://bodytech.com.co/uploads/post/291be070af1d4989aef6367e4714c677/piloto-reapertura-pereira-1_1920x854.jpg",
+        user_id: user.id
+        }
+      }
+
+      patch "/gyms/#{gym.id}", params: gym_params
+      expect(response).to have_http_status(200)
+      gym = Gym.first
+      expect(gym.hours_of_operations).to eq 'strings'
+    end
+
+    it "updates a gym phone_number" do
+      user = User.create email:"a@a.a" ,  password:"123456", password_confirmation:"123456"
+      gym = user.gyms.create(
+        gym_name: 'Body Tech',
+        store_code: '051',
+        hours_of_operations: 'string',
+        phone_number: '875564036',
+        features: "Sauna, Daycare, Yoga",
+        street: '245 bodylane',
+        city: "Pittsburg",
+        state: "PA",
+        email: "BodyTech051@bodytect.com",
+        deal: "25% off supplements!!",
+        deal_code: "BDYT0025",
+        image: "https://bodytech.com.co/uploads/post/291be070af1d4989aef6367e4714c677/piloto-reapertura-pereira-1_1920x854.jpg"
+      )
+
+      gym_params = {
+        gym:{
+        gym_name: 'Body Tech',
+        store_code: '000',
+        hours_of_operations: 'string',
+        phone_number: '9495664036',
+        features: "Sauna, Daycare, Yoga",
+        street: '245 bodylane',
+        city: "Pittsburg",
+        state: "PA",
+        email: "BodyTech051@bodytect.com",
+        deal: "25% off supplements!!",
+        deal_code: "BDYT0025",
+        image: "https://bodytech.com.co/uploads/post/291be070af1d4989aef6367e4714c677/piloto-reapertura-pereira-1_1920x854.jpg",
+        user_id: user.id
+        }
+      }
+
+      patch "/gyms/#{gym.id}", params: gym_params
+      expect(response).to have_http_status(200)
+      gym = Gym.first
+      expect(gym.phone_number).to eq '9495664036'
+    end
+
+    it "updates a gym features" do
+      user = User.create email:"a@a.a" ,  password:"123456", password_confirmation:"123456"
+      gym = user.gyms.create(
+        gym_name: 'Body Tech',
+        store_code: '051',
+        hours_of_operations: 'string',
+        phone_number: '875564036',
+        features: "Sauna, Daycare, Yoga",
+        street: '245 bodylane',
+        city: "Pittsburg",
+        state: "PA",
+        email: "BodyTech051@bodytect.com",
+        deal: "25% off supplements!!",
+        deal_code: "BDYT0025",
+        image: "https://bodytech.com.co/uploads/post/291be070af1d4989aef6367e4714c677/piloto-reapertura-pereira-1_1920x854.jpg"
+      )
+
+      gym_params = {
+        gym:{
+        gym_name: 'Body Tech',
+        store_code: '000',
+        hours_of_operations: 'string',
+        phone_number: '9495664036',
+        features: "Sauna, Daycare,",
+        street: '245 bodylane',
+        city: "Pittsburg",
+        state: "PA",
+        email: "BodyTech051@bodytect.com",
+        deal: "25% off supplements!!",
+        deal_code: "BDYT0025",
+        image: "https://bodytech.com.co/uploads/post/291be070af1d4989aef6367e4714c677/piloto-reapertura-pereira-1_1920x854.jpg",
+        user_id: user.id
+        }
+      }
+
+      patch "/gyms/#{gym.id}", params: gym_params
+      expect(response).to have_http_status(200)
+      gym = Gym.first
+      expect(gym.features).to eq "Sauna, Daycare,"
+    end
+
+    it "updates a gym street" do
+      user = User.create email:"a@a.a" ,  password:"123456", password_confirmation:"123456"
+      gym = user.gyms.create(
+        gym_name: 'Body Tech',
+        store_code: '051',
+        hours_of_operations: 'string',
+        phone_number: '875564036',
+        features: "Sauna, Daycare, Yoga",
+        street: '245 bodylane',
+        city: "Pittsburg",
+        state: "PA",
+        email: "BodyTech051@bodytect.com",
+        deal: "25% off supplements!!",
+        deal_code: "BDYT0025",
+        image: "https://bodytech.com.co/uploads/post/291be070af1d4989aef6367e4714c677/piloto-reapertura-pereira-1_1920x854.jpg"
+      )
+
+      gym_params = {
+        gym:{
+        gym_name: 'Body Tech',
+        store_code: '000',
+        hours_of_operations: 'string',
+        phone_number: '9495664036',
+        features: "Sauna, Daycare,",
+        street: 'bodylane',
+        city: "Pittsburg",
+        state: "PA",
+        email: "BodyTech051@bodytect.com",
+        deal: "25% off supplements!!",
+        deal_code: "BDYT0025",
+        image: "https://bodytech.com.co/uploads/post/291be070af1d4989aef6367e4714c677/piloto-reapertura-pereira-1_1920x854.jpg",
+        user_id: user.id
+        }
+      }
+
+      patch "/gyms/#{gym.id}", params: gym_params
+      expect(response).to have_http_status(200)
+      gym = Gym.first
+      expect(gym.street).to eq "bodylane"
+    end
+    it "updates a gym city" do
+      user = User.create email:"a@a.a" ,  password:"123456", password_confirmation:"123456"
+      gym = user.gyms.create(
+        gym_name: 'Body Tech',
+        store_code: '051',
+        hours_of_operations: 'string',
+        phone_number: '875564036',
+        features: "Sauna, Daycare, Yoga",
+        street: '245 bodylane',
+        city: "Pittsburg",
+        state: "PA",
+        email: "BodyTech051@bodytect.com",
+        deal: "25% off supplements!!",
+        deal_code: "BDYT0025",
+        image: "https://bodytech.com.co/uploads/post/291be070af1d4989aef6367e4714c677/piloto-reapertura-pereira-1_1920x854.jpg"
+      )
+
+      gym_params = {
+        gym:{
+        gym_name: 'Body Tech',
+        store_code: '000',
+        hours_of_operations: 'string',
+        phone_number: '9495664036',
+        features: "Sauna, Daycare,",
+        street: '245 bodylane',
+        city: "Pitts",
+        state: "PA",
+        email: "BodyTech051@bodytect.com",
+        deal: "25% off supplements!!",
+        deal_code: "BDYT0025",
+        image: "https://bodytech.com.co/uploads/post/291be070af1d4989aef6367e4714c677/piloto-reapertura-pereira-1_1920x854.jpg",
+        user_id: user.id
+        }
+      }
+
+      patch "/gyms/#{gym.id}", params: gym_params
+      expect(response).to have_http_status(200)
+      gym = Gym.first
+      expect(gym.city).to eq "Pitts"
+    end
+    it "updates a gym state" do
+      user = User.create email:"a@a.a" ,  password:"123456", password_confirmation:"123456"
+      gym = user.gyms.create(
+        gym_name: 'Body Tech',
+        store_code: '051',
+        hours_of_operations: 'string',
+        phone_number: '875564036',
+        features: "Sauna, Daycare, Yoga",
+        street: '245 bodylane',
+        city: "Pittsburg",
+        state: "PA",
+        email: "BodyTech051@bodytect.com",
+        deal: "25% off supplements!!",
+        deal_code: "BDYT0025",
+        image: "https://bodytech.com.co/uploads/post/291be070af1d4989aef6367e4714c677/piloto-reapertura-pereira-1_1920x854.jpg"
+      )
+
+      gym_params = {
+        gym:{
+        gym_name: 'Body Tech',
+        store_code: '000',
+        hours_of_operations: 'string',
+        phone_number: '9495664036',
+        features: "Sauna, Daycare,",
+        street: '245 bodylane',
+        city: "Pittsburg",
+        state: "CA",
+        email: "BodyTech051@bodytect.com",
+        deal: "25% off supplements!!",
+        deal_code: "BDYT0025",
+        image: "https://bodytech.com.co/uploads/post/291be070af1d4989aef6367e4714c677/piloto-reapertura-pereira-1_1920x854.jpg",
+        user_id: user.id
+        }
+      }
+
+      patch "/gyms/#{gym.id}", params: gym_params
+      expect(response).to have_http_status(200)
+      gym = Gym.first
+      expect(gym.state).to eq "CA"
+    end
+
+    it "updates a gym email" do
+      user = User.create email:"a@a.a" ,  password:"123456", password_confirmation:"123456"
+      gym = user.gyms.create(
+        gym_name: 'Body Tech',
+        store_code: '051',
+        hours_of_operations: 'string',
+        phone_number: '875564036',
+        features: "Sauna, Daycare, Yoga",
+        street: '245 bodylane',
+        city: "Pittsburg",
+        state: "PA",
+        email: "BodyTech051@bodytect.com",
+        deal: "25% off supplements!!",
+        deal_code: "BDYT0025",
+        image: "https://bodytech.com.co/uploads/post/291be070af1d4989aef6367e4714c677/piloto-reapertura-pereira-1_1920x854.jpg"
+      )
+
+      gym_params = {
+        gym:{
+        gym_name: 'Body Tech',
+        store_code: '000',
+        hours_of_operations: 'string',
+        phone_number: '9495664036',
+        features: "Sauna, Daycare,",
+        street: '245 bodylane',
+        city: "Pittsburg",
+        state: "PA",
+        email: "string",
+        deal: "25% off supplements!!",
+        deal_code: "BDYT0025",
+        image: "https://bodytech.com.co/uploads/post/291be070af1d4989aef6367e4714c677/piloto-reapertura-pereira-1_1920x854.jpg",
+        user_id: user.id
+        }
+      }
+
+      patch "/gyms/#{gym.id}", params: gym_params
+      expect(response).to have_http_status(200)
+      gym = Gym.first
+      expect(gym.email).to eq "string"
+    end
+    it "updates a gym deal" do
+      user = User.create email:"a@a.a" ,  password:"123456", password_confirmation:"123456"
+      gym = user.gyms.create(
+        gym_name: 'Body Tech',
+        store_code: '051',
+        hours_of_operations: 'string',
+        phone_number: '875564036',
+        features: "Sauna, Daycare, Yoga",
+        street: '245 bodylane',
+        city: "Pittsburg",
+        state: "PA",
+        email: "BodyTech051@bodytect.com",
+        deal: "25% off supplements!!",
+        deal_code: "BDYT0025",
+        image: "https://bodytech.com.co/uploads/post/291be070af1d4989aef6367e4714c677/piloto-reapertura-pereira-1_1920x854.jpg"
+      )
+
+      gym_params = {
+        gym:{
+        gym_name: 'Body Tech',
+        store_code: '000',
+        hours_of_operations: 'string',
+        phone_number: '9495664036',
+        features: "Sauna, Daycare,",
+        street: '245 bodylane',
+        city: "Pittsburg",
+        state: "PA",
+        email: "BodyTech051@bodytect.com",
+        deal: "updated deal",
+        deal_code: "BDYT0025",
+        image: "https://bodytech.com.co/uploads/post/291be070af1d4989aef6367e4714c677/piloto-reapertura-pereira-1_1920x854.jpg",
+        user_id: user.id
+        }
+      }
+
+      patch "/gyms/#{gym.id}", params: gym_params
+      expect(response).to have_http_status(200)
+      gym = Gym.first
+      expect(gym.deal).to eq "updated deal"
+    end
+
+    it "updates a gym deal_code" do
+      user = User.create email:"a@a.a" ,  password:"123456", password_confirmation:"123456"
+      gym = user.gyms.create(
+        gym_name: 'Body Tech',
+        store_code: '051',
+        hours_of_operations: 'string',
+        phone_number: '875564036',
+        features: "Sauna, Daycare, Yoga",
+        street: '245 bodylane',
+        city: "Pittsburg",
+        state: "PA",
+        email: "BodyTech051@bodytect.com",
+        deal: "25% off supplements!!",
+        deal_code: "BDYT0025",
+        image: "https://bodytech.com.co/uploads/post/291be070af1d4989aef6367e4714c677/piloto-reapertura-pereira-1_1920x854.jpg"
+      )
+
+      gym_params = {
+        gym:{
+        gym_name: 'Body Tech',
+        store_code: '000',
+        hours_of_operations: 'string',
+        phone_number: '9495664036',
+        features: "Sauna, Daycare,",
+        street: '245 bodylane',
+        city: "Pittsburg",
+        state: "PA",
+        email: "BodyTech051@bodytect.com",
+        deal: "25% off supplements!!",
+        deal_code: "updated deal code",
+        image: "https://bodytech.com.co/uploads/post/291be070af1d4989aef6367e4714c677/piloto-reapertura-pereira-1_1920x854.jpg",
+        user_id: user.id
+        }
+      }
+
+      patch "/gyms/#{gym.id}", params: gym_params
+      expect(response).to have_http_status(200)
+      gym = Gym.first
+      expect(gym.deal_code).to eq "updated deal code"
+    end
+    it "updates a gym features" do
+      user = User.create email:"a@a.a" ,  password:"123456", password_confirmation:"123456"
+      gym = user.gyms.create(
+        gym_name: 'Body Tech',
+        store_code: '051',
+        hours_of_operations: 'string',
+        phone_number: '875564036',
+        features: "Sauna, Daycare, Yoga",
+        street: '245 bodylane',
+        city: "Pittsburg",
+        state: "PA",
+        email: "BodyTech051@bodytect.com",
+        deal: "25% off supplements!!",
+        deal_code: "BDYT0025",
+        image: "https://bodytech.com.co/uploads/post/291be070af1d4989aef6367e4714c677/piloto-reapertura-pereira-1_1920x854.jpg"
+      )
+
+      gym_params = {
+        gym:{
+        gym_name: 'Body Tech',
+        store_code: '000',
+        hours_of_operations: 'string',
+        phone_number: '9495664036',
+        features: "Sauna, Daycare,",
+        street: '245 bodylane',
+        city: "Pittsburg",
+        state: "PA",
+        email: "BodyTech051@bodytect.com",
+        deal: "25% off supplements!!",
+        deal_code: "BDYT0025",
+        image: "new image link",
+        user_id: user.id
+        }
+      }
+
+      patch "/gyms/#{gym.id}", params: gym_params
+      expect(response).to have_http_status(200)
+      gym = Gym.first
+      expect(gym.image).to eq "new image link"
+    end
+  end
 end
