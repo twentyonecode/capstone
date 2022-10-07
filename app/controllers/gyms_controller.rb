@@ -23,6 +23,13 @@ class GymsController < ApplicationController
         # check if what is being updated is valid
         # return info about updated instance in the db
         # if invalid it returns a 422
+        gym = Gym.find(params[:id])
+        gym.update(gym_params)
+        if gym.valid?
+            render json: gym
+        else
+            render json: gym.errors, status: 422
+        end 
     end
 
     def delete

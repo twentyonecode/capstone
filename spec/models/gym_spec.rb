@@ -214,4 +214,6 @@ RSpec.describe Gym, type: :model do
     )  
     expect(gym.errors[:image]).to_not be_empty
   end
+
+  
 end
