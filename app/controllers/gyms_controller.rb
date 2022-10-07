@@ -10,7 +10,12 @@ class GymsController < ApplicationController
         # check if what is being craeted is valid
         # return info about new instance in the db
         # if invalid it returns a 422
-        
+        gym = Gym.create(gym_params)
+        if gym.valid?
+            render json: gym
+        else
+            render json: gym.error, status: 422
+        end 
     end
 
     def update
@@ -28,6 +33,10 @@ class GymsController < ApplicationController
     end
         #private section of the class
         # STRONG PARAMS  
+    private 
+    def gym_params
+        params.require(:gym).permit(:gym_name, :store_code, :hours_of_operations, :phone_number, :features, :street, :city, :state, :email, :deal, :deal_code, :image,:user_id)
+    end
 
 end
 
