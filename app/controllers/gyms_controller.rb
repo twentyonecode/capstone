@@ -14,7 +14,7 @@ class GymsController < ApplicationController
         if gym.valid?
             render json: gym
         else
-            render json: gym.error, status: 422
+            render json: gym.errors, status: 422
         end 
     end
 
@@ -35,7 +35,7 @@ class GymsController < ApplicationController
         # STRONG PARAMS  
     private 
     def gym_params
-        params.require(:gym).permit(:gym_name, :store_code, :hours_of_operations, :phone_number, :features, :street, :city, :state, :email, :deal, :deal_code, :image,:user_id)
+        params.require(:gym).permit(:gym_name, :store_code, :hours_of_operations, :phone_number, :features, :street, :city, :state, :email, :deal, :deal_code, :image, :user_id)
     end
 
 end
