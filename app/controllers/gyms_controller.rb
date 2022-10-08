@@ -32,11 +32,18 @@ class GymsController < ApplicationController
         end 
     end
 
-    def delete
+    def destroy
         # deletes the instance by :id using params, in the db
+        gym = Gym.find(params[:id])
+
         # check if instance was deleted 
+        if gym.destroy
         # if valid return 204
+            render json: gym, status: 204
         # if invalid return 422
+        else
+            render json: gym.errors, status: 422
+        end
     end
         #private section of the class
         # STRONG PARAMS  
