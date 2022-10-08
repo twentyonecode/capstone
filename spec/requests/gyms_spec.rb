@@ -24,6 +24,19 @@ RSpec.describe "Gyms", type: :request do
       gym = JSON.parse(response.body)
       expect(response).to have_http_status(200)
       expect(gym.length).to eq 1
+      gym = Gym.first #gym on line 24 was JSON, had to reassign to ActiveRecord Query
+      expect(gym.gym_name).to be_a(String)
+      expect(gym.store_code).to be_a(String)
+      expect(gym.hours_of_operations).to be_a(String)
+      expect(gym.phone_number).to be_a(String)
+      expect(gym.features).to be_a(String)
+      expect(gym.street).to be_a(String)
+      expect(gym.city).to be_a(String)
+      expect(gym.state).to be_a(String)
+      expect(gym.email).to be_a(String)
+      expect(gym.deal).to be_a(String)
+      expect(gym.deal_code).to be_a(String)
+      expect(gym.image).to be_a(String)
 
     end
   end
@@ -617,7 +630,7 @@ RSpec.describe "Gyms", type: :request do
         user_id: nil
         }
       }
-      post "/gyms/#{gym.id}", params: gym_params
+      patch "/gyms/#{gym.id}", params: gym_params
       expect(response).to have_http_status(422)
       json = JSON.parse(response.body)
       expect(json["image"]).to include("can't be blank")
