@@ -8,10 +8,10 @@
     return (
         <div> 
             <h2>Not Found</h2>
-            <img src="https://s3.envato.com/files/198224555/33_ASLAN_404.jpg" alt="" className="" />
+            <p>Hey! We are sorry the page you are looking for does not exist! Please click Home at the top of the page to return back and see better deals!</p>
         </div>
     )
     }
     export default NotFound
 
-    // https://media.istockphoto.com/photos/rat-bodybuillders-picture-id92013632?k=20&m=92013632&s=612x612&w=0&h=DvbJ0nztOwXnaKhdNuxDSxugBvUyxkwtU6vLxtHcpPU=
+    
