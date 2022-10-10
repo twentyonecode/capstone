@@ -1,16 +1,17 @@
 import React from "react"
-import { render } from "@testing-library/react"
+import { render, screen } from "@testing-library/react"
 import ProtectedGymIndex from "./ProtectedGymIndex"
+import { BrowserRouter } from "react-router-dom"
+import { element } from "prop-types"
+import { CardBody } from "reactstrap"
 
 describe("<ProtectedGymIndex />", () => {
     it("renders without crashing", () => {
-    const div = document.createElement("div")
-    render(<ProtectedGymIndex />, div)
+        const div = document.createElement("div")
+        render(<ProtectedGymIndex />, div)
     })
-
-    it("checks for the h1 tag", () => {
-    const h1 = document.createElement("h1")
-    render(<ProtectedGymIndex />, h1) 
+    it("checks for presence of card", () => {
+        const card = document.createElement("CardBody")
+        render(<ProtectedGymIndex />, CardBody)
     })
 })
-

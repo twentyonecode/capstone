@@ -10,49 +10,49 @@ const ProtectedGymIndex = ({ gyms, current_user }) => {
     // console.log("gyms", gyms)
     return (
         <>
-        <h1>My gyms</h1>
-        <main className="gym-index-cards">
-            {gyms?.map((gym, index) => {
-                return (
-                    <Card
-                        color="dark"
-                        outline
-                        style={{
-                            width: '14rem'
-                        }}
-                        key={index}
-                    >
-                        <img
-                            alt=""
-                            src={gym.image}
-                        />
-                        <CardBody>
-                            <div className="gym-name">
-                                <CardTitle>
-                                    {gym.name}
-                                </CardTitle>
-                            </div>
-                            <CardText>Deal: {gym.deals}</CardText>
-                            <Button color="primary" size="lg">
-                                <NavLink to={`/gymshow/${gym.id}`}>
-                                    <div className="button-index-see-more">
-                                        claim your deal
-                                    </div>
-                                </NavLink>
-                            </Button>
-                            <Button color="primary" size="lg">
-                                <NavLink to={`/gymedit/${gym.id}`}>
-                                    <div className="button-index-see-more">
-                                        Update your gym
-                                    </div>
-                                </NavLink>
+            <h1>My gyms</h1>
+            <main className="gym-index-cards">
+                {gyms?.map((gym, index) => {
+                    return (
+                        <Card
+                            color="dark"
+                            outline
+                            style={{
+                                width: '14rem'
+                            }}
+                            key={index}
+                        >
+                            <img
+                                alt=""
+                                src={gym.image}
+                            />
+                            <CardBody>
+                                <div className="gym-name">
+                                    <CardTitle>
+                                        {gym.name}
+                                    </CardTitle>
+                                </div>
+                                <CardText>Deal: {gym.deals}</CardText>
+                                <Button color="primary" size="lg">
+                                    <NavLink to={`/gymshow/${gym.id}`}>
+                                        <div className="button-index-see-more">
+                                            claim your deal
+                                        </div>
+                                    </NavLink>
                                 </Button>
-                        </CardBody>
-                    </Card>
+                                <Button color="primary" size="lg">
+                                    <NavLink to={`/gymedit/${gym.id}`}>
+                                        <div className="button-index-see-more">
+                                            Update your gym
+                                        </div>
+                                    </NavLink>
+                                </Button>
+                            </CardBody>
+                        </Card>
 
-                )
-            })}
-        </main>
+                    )
+                })}
+            </main>
         </>
     )
 }
