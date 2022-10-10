@@ -4,6 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import mockGyms from "./mockGyms"
 import Header from "./components/Header"
 import  Home  from "./pages/Home"
+import NotFound from "./pages/NotFound"
+
 
 const App = (props) => {
 
@@ -23,10 +25,13 @@ const App = (props) => {
 
   return (
     <BrowserRouter>
+      
       <Header {...props} />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/gymindex" element={<GymIndex gyms={gyms} />} />
+        <Route path="/*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   )
