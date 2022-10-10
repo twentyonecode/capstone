@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Form, FormGroup, Input, Label, Button } from "reactstrap";
 
-const GymNew = ({ createGym }) => {
+const GymNew = ({ createGym, currentUser } ) => {
     const [newGym, setNewGym] = useState({
         gym_name: "",
         store_code: "",
@@ -14,7 +14,8 @@ const GymNew = ({ createGym }) => {
         email: "",
         deal: "",
         deal_code: "",
-        image: ""
+        image: "",
+        user_id: currentUser.id
     })
     const handleChange = (e) => {
         setNewGym({ ...newGym, [e.target.name]: e.target.value })
