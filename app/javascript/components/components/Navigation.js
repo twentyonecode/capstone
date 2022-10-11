@@ -30,7 +30,7 @@ const Navigation = ({
           )}
           {logged_in && (
           <NavItem>
-           <NavLink to="gymshow"  className="nav-link">
+           <NavLink to="protectedgymindex"  className="nav-link">
               My gyms deals
             </NavLink>
           </NavItem>

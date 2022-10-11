@@ -6,6 +6,7 @@ import Header from "./components/Header"
 import Home from "./pages/Home"
 import NotFound from "./pages/NotFound"
 import GymNew from "./pages/GymNew"
+import ProtectedGymIndex from "./pages/ProtectedGymIndex"
 
 const App = (props) => {
 
@@ -46,9 +47,10 @@ const App = (props) => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/gymindex" element={<GymIndex gyms={gyms} />} />
-
         <Route path="/gymnew" element={<GymNew createGym={createGym} currentUser={props.current_user} />} />
+        <Route path="/protectedgymindex" element={<ProtectedGymIndex gyms={gyms} {...props} />} />
         <Route path="/*" element={<NotFound />} />
+
       </Routes>
     </BrowserRouter>
   )
