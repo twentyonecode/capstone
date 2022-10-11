@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom"
 
 
 const GymIndex = ({ gyms }) => {
-    console.log("gyms", gyms)
     return (
 
         <main className="gym-index-cards">

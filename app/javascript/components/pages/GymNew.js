@@ -26,7 +26,6 @@ const GymNew = ({ createGym, currentUser } ) => {
         console.log(newGym)
     }
 
-
     return (
         <>
             <h2>Add a gym</h2>
