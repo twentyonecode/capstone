@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Form, FormGroup, Input, Label, Button } from "reactstrap";
 
 const GymNew = ({ createGym, currentUser } ) => {
+    debugger
     const [newGym, setNewGym] = useState({
         gym_name: "",
         store_code: "",
