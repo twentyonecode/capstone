@@ -6,8 +6,6 @@ import { NavLink } from "react-router-dom"
 
 const ProtectedGymIndex = ({ gyms, current_user }) => {
     const filterGyms = gyms?.filter(gym => gym.user_id === current_user.id)
-    console.log(gyms)
-    // console.log("gyms", gyms)
     return (
         <>
             <h1>My gyms</h1>
