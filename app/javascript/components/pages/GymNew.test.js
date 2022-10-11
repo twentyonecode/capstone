@@ -21,7 +21,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"
 // })
 
 describe("<GymNew />", () => {
-    it("renders without crashing", ({}) => {
+    it("renders without crashing", ({createGym, props}) => {
         render(
             <BrowserRouter>
                 <Routes>
