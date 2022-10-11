@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Form, FormGroup, Input, Label, Button } from "reactstrap";
 
 const GymNew = ({ createGym, currentUser } ) => {
-    debugger
+    console.log("currentUser", currentUser)
     const [newGym, setNewGym] = useState({
         gym_name: "",
         store_code: "",
@@ -23,7 +23,7 @@ const GymNew = ({ createGym, currentUser } ) => {
     }
     const handleSubmit = () => {
         createGym(newGym)
-        console.log(newGym)
+        // console.log(newGym)
     }
 
     return (
