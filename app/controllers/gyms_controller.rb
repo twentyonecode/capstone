@@ -10,13 +10,13 @@ class GymsController < ApplicationController
         # check if what is being craeted is valid
         # return info about new instance in the db
         # if invalid it returns a 422
-        gym = Gym.create(gym_params)
+        `gym = Gym.create(gym_params)
         if gym.valid?
             render json: gym
         else
             render json: gym.errors, status: 422
         end 
-    end
+    end`
 
     def update
         # updates the instance by :id using params, in the db

@@ -5,7 +5,7 @@ import mockGyms from "./mockGyms"
 import Header from "./components/Header"
 import  Home  from "./pages/Home"
 import NotFound from "./pages/NotFound"
-
+import ProtectedGymIndex from "./pages/ProtectedGymIndex"
 
 const App = (props) => {
 
@@ -31,7 +31,9 @@ const App = (props) => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/gymindex" element={<GymIndex gyms={gyms} />} />
+        <Route path="/protectedgymindex" element={<ProtectedGymIndex gyms={gyms} {...props} />} />
         <Route path="/*" element={<NotFound />} />
+
       </Routes>
     </BrowserRouter>
   )
