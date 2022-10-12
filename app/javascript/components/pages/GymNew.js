@@ -23,7 +23,6 @@ const GymNew = ({ createGym, currentUser } ) => {
     }
     const handleSubmit = () => {
         createGym(newGym)
-        // console.log(newGym)
     }
 
     return (

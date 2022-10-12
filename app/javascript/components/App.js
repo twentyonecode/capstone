@@ -34,7 +34,6 @@ const App = (props) => {
       method: "POST"
     })
       .then(response => response.json())
-      // .then(payload => setGyms(gyms.concat([payload])))
       .then(payload => this.readGyms())
       .catch(errors => console.log(errors))
   }
