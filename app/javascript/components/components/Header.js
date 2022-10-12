@@ -4,7 +4,7 @@ import Navigation from "./Navigation"
 const Header = (props) => {
   return (
     <>
-      <h1>Gym Rat Deals</h1>
+      <h2>Gym Rat Deals</h2>
       <Navigation {...props} />
     </>
   )
