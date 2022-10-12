@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Form, FormGroup, Input, Label, Button } from "reactstrap";
 
+
 const GymNew = ({ createGym, currentUser } ) => {
     console.log("currentUser", currentUser)
     const [newGym, setNewGym] = useState({
