@@ -28,7 +28,7 @@ const Navigation = ({
             </a>
           </NavItem>
           )}
-          {logged_in && (
+          {logged_in &&(
           <NavItem>
            <NavLink to="protectedgymindex"  className="nav-link">
               My gyms deals
