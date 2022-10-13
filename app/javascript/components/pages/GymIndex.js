@@ -43,4 +43,5 @@ const GymIndex = ({ gyms }) => {
         </main>
     )
 }
+
 export default GymIndex
