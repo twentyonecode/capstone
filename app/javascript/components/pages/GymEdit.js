@@ -6,22 +6,21 @@ const GymEdit = ({ gyms, currentUser, updateGym }) => {
     console.log("currentUser", currentUser)
     const { id } = useParams()
     const currentGym = gyms?.find(gym => gym.id === +id)
-    const navigate = useNavigate()
 
     const [editGym, setEditGym] = useState(
         {
-            gym_name: "",
-            store_code: "",
-            hours_of_operations: "",
-            phone_number: "",
-            features: "",
-            street: "",
-            city: "",
-            state: "",
-            email: "",
-            deal: "",
-            deal_code: "",
-            image: "",
+            gym_name: currentGym.gym_name,
+            store_code: currentGym.store_code,
+            hours_of_operations: currentGym.hours_of_operations,
+            phone_number: currentGym.phone_number,
+            features: currentGym.features,
+            street: currentGym.street,
+            city: currentGym.city,
+            state: currentGym.state,
+            email: currentGym.email,
+            deal: currentGym.deal,
+            deal_code: currentGym.deal_code,
+            image: currentGym.image,
             user_id: currentUser.id
         }
     )
@@ -30,7 +29,6 @@ const GymEdit = ({ gyms, currentUser, updateGym }) => {
     }
     const handleSubmit = () => {
         updateGym(editGym, currentGym.id)
-        navigate("/gymindex")
     }
 
     return (
@@ -85,12 +83,8 @@ const GymEdit = ({ gyms, currentUser, updateGym }) => {
                     <Label>Update or add an Image</Label>
                     <Input type="text" name="image" onChange={handleChange} value={editGym.image} placeholder="insert image" />
                 </FormGroup>
-
-                <Button onClick={handleSubmit} name="submit" >
-                    <NavLink to={'/gymindex'} >
-                        submit Edit
-                    </NavLink>
-                </Button>
+                <Button onClick={handleSubmit} name="submit" >submit Edit</Button>
+                <Button onClick={handleSubmit} name="delete">delete</Button>
             </Form>
         </>
     )

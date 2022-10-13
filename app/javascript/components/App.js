@@ -5,10 +5,10 @@ import mockGyms from "./mockGyms"
 import Header from "./components/Header"
 import Home from "./pages/Home"
 import NotFound from "./pages/NotFound"
-import GymNew from "./pages/GymNew"
 import ProtectedGymIndex from "./pages/ProtectedGymIndex"
 import GymEdit from "./pages/GymEdit"
 import GymShow from "./pages/GymShow"
+import GymNew from "./pages/GymNew"
 
 const App = (props) => {
 
@@ -17,14 +17,6 @@ const App = (props) => {
   useEffect(() => {
     readGyms()
   }, [])
-  const readGyms = () => {
-    fetch("/gyms")
-      .then((response) => response.json())
-      .then((payload) => {
-        setGyms(payload)
-      })
-      .catch((error) => console.log(error))
-  }
 
   const createGym = (gym) => {
     console.log("this is a flag", JSON.stringify(gym))
@@ -36,8 +28,18 @@ const App = (props) => {
       method: "POST"
     })
       .then(response => response.json())
-      .then(payload => this.readGyms())
+      .then(payload => readGyms())
       .catch(errors => console.log(errors))
+  }
+
+  const readGyms = () => {
+    console.log("flag", gyms)
+    fetch("/gyms")
+      .then((response) => response.json())
+      .then((payload) => {
+        setGyms(payload)
+      })
+      .catch((error) => console.log(error))
   }
 
   const updateGym = (gym, id) => {
@@ -49,10 +51,9 @@ const App = (props) => {
       method: "PATCH"
     })
       .then((response) => response.json())
-      .then((payload) => readGym())
+      .then((payload) => readGyms())
       .catch((errors) => console.log("Gym update errors:", errors))
   }
-
   return (
     <BrowserRouter>
 
@@ -61,15 +62,16 @@ const App = (props) => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/gymindex" element={<GymIndex gyms={gyms} />} />
-        <Route path="/gymnew" element={<GymNew createGym={createGym} currentUser={props.current_user} />} />
         <Route path="/protectedgymindex" element={<ProtectedGymIndex gyms={gyms} {...props} />} />
         <Route path="/gymedit/:id" element={<GymEdit gyms={gyms} updateGym={updateGym} currentUser={props.current_user} />} />
-        <Route path="/gymshow/:id"  element={<GymShow gyms={gyms}  />} />
+        <Route path="/gymnew" element={<GymNew createGym={createGym} currentUser={props.current_user} />} />
+        <Route path="/gymshow/:id" element={<GymShow gyms={gyms} />} />
         <Route path="/*" element={<NotFound />} />
-
       </Routes>
     </BrowserRouter>
   )
 }
+
+
 
 export default App

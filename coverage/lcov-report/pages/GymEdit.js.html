@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for pages/GymNew.js</title>
+    <title>Code coverage report for pages/GymEdit.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">pages</a> GymNew.js</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">pages</a> GymEdit.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">63.63% </span>
+                <span class="strong">81.81% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/11</span>
+                <span class='fraction'>9/11</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/3</span>
+                <span class='fraction'>2/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">63.63% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/11</span>
+                <span class='fraction'>8/10</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -160,9 +160,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -177,18 +179,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -249,97 +249,97 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useState } from "react";
 import { Form, FormGroup, Input, Label, Button } from "reactstrap";
-import { NavLink, useNavigate, Redirect, Route } from "react-router-dom";
+import { useParams, useNavigate, NavLink } from 'react-router-dom'
 &nbsp;
-const GymNew = ({ createGym, currentUser }) =&gt; {
-    const [submitted, setSubmitted] = useState(false)
+const GymEdit = ({ gyms, currentUser, updateGym }) =&gt; {
     console.log("currentUser", currentUser)
-    const [newGym, setNewGym] = useState({
-        gym_name: "",
-        store_code: "",
-        hours_of_operations: "",
-        phone_number: "",
-        features: "",
-        street: "",
-        city: "",
-        state: "",
-        email: "",
-        deal: "",
-        deal_code: "",
-        image: "",
-        user_id: currentUser.id
-    })
+    const { id } = useParams()
+    const currentGym = gyms?.find(gym =&gt; gym.id === +id)
+&nbsp;
+    const [editGym, setEditGym] = useState(
+        {
+            gym_name: currentGym.gym_name,
+            store_code: currentGym.store_code,
+            hours_of_operations: currentGym.hours_of_operations,
+            phone_number: currentGym.phone_number,
+            features: currentGym.features,
+            street: currentGym.street,
+            city: currentGym.city,
+            state: currentGym.state,
+            email: currentGym.email,
+            deal: currentGym.deal,
+            deal_code: currentGym.deal_code,
+            image: currentGym.image,
+            user_id: currentUser.id
+        }
+    )
     const handleChange = <span class="fstat-no" title="function not covered" >(e</span>) =&gt; {
-<span class="cstat-no" title="statement not covered" >        setNewGym({ ...newGym, [e.target.name]: e.target.value })</span>
+<span class="cstat-no" title="statement not covered" >        setEditGym({ ...editGym, [e.target.name]: e.target.value })</span>
     }
-    const handleSubmit = <span class="fstat-no" title="function not covered" >(e</span>) =&gt; {
-<span class="cstat-no" title="statement not covered" >        e.preventDefault()</span>
-<span class="cstat-no" title="statement not covered" >        createGym(newGym)</span>
-<span class="cstat-no" title="statement not covered" >        setSubmitted(true)</span>
+    const handleSubmit = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >        updateGym(editGym, currentGym.id)</span>
     }
 &nbsp;
     return (
         &lt;&gt;
-            {/* {submitted ? &lt;Redirect to="/protectedgymindex" /&gt; : null} */}
-            &lt;h2&gt;Add a gym&lt;/h2&gt;
+            &lt;h2&gt;Edit your gym&lt;/h2&gt;
             &lt;Form&gt;
                 &lt;FormGroup&gt;
                     &lt;Label&gt;gym name&lt;/Label&gt;
-                    &lt;Input type="text" name="gym_name" onChange={handleChange} placeholder="insert gym name" /&gt;
+                    &lt;Input type="text" name="gym_name" onChange={handleChange} value={editGym.gym_name} placeholder="Update your gym name" /&gt;
                 &lt;/FormGroup&gt;
                 &lt;FormGroup&gt;
                     &lt;Label&gt;store code&lt;/Label&gt;
-                    &lt;Input type="text" name="store_code" onChange={handleChange} placeholder="insert store code" /&gt;
+                    &lt;Input type="text" name="store_code" onChange={handleChange} value={editGym.store_code} placeholder="insert store code" /&gt;
                 &lt;/FormGroup&gt;
                 &lt;FormGroup&gt;
-                    &lt;Label&gt;Hours of operation&lt;/Label&gt;
-                    &lt;Input type="text" name="hours_of_operations" onChange={handleChange} placeholder="insert hours of operation" /&gt;
+                    &lt;Label&gt;Update Gym Hours&lt;/Label&gt;
+                    &lt;Input type="text" name="hours_of_operations" onChange={handleChange} values={editGym.hours_of_operations} placeholder="insert hours of operation" /&gt;
                 &lt;/FormGroup&gt;
                 &lt;FormGroup&gt;
-                    &lt;Label&gt;Phone number&lt;/Label&gt;
-                    &lt;Input type="text" name="phone_number" onChange={handleChange} placeholder="insert phone number" /&gt;
+                    &lt;Label&gt;Update Phone number&lt;/Label&gt;
+                    &lt;Input type="text" name="phone_number" onChange={handleChange} value={editGym.phone_number} placeholder="insert phone number" /&gt;
                 &lt;/FormGroup&gt;
                 &lt;FormGroup&gt;
-                    &lt;Label&gt;Features&lt;/Label&gt;
-                    &lt;Input type="text" name="features" onChange={handleChange} placeholder="insert features" /&gt;
+                    &lt;Label&gt;Update Features&lt;/Label&gt;
+                    &lt;Input type="text" name="features" onChange={handleChange} value={editGym.features} placeholder="insert features" /&gt;
                 &lt;/FormGroup&gt;
                 &lt;FormGroup&gt;
                     &lt;Label&gt;Street&lt;/Label&gt;
-                    &lt;Input type="text" name="street" onChange={handleChange} placeholder="insert street" /&gt;
+                    &lt;Input type="text" name="street" onChange={handleChange} value={editGym.street} placeholder="insert street" /&gt;
                 &lt;/FormGroup&gt;
                 &lt;FormGroup&gt;
                     &lt;Label&gt;City&lt;/Label&gt;
-                    &lt;Input type="text" name="city" onChange={handleChange} placeholder="insert city" /&gt;
+                    &lt;Input type="text" name="city" onChange={handleChange} value={editGym.city} placeholder="insert city" /&gt;
                 &lt;/FormGroup&gt;
                 &lt;FormGroup&gt;
                     &lt;Label&gt;State&lt;/Label&gt;
-                    &lt;Input type="text" name="state" onChange={handleChange} placeholder="insert state" /&gt;
+                    &lt;Input type="text" name="state" onChange={handleChange} value={editGym.state} placeholder="insert state" /&gt;
                 &lt;/FormGroup&gt;
                 &lt;FormGroup&gt;
-                    &lt;Label&gt;Email&lt;/Label&gt;
-                    &lt;Input type="text" name="email" onChange={handleChange} placeholder="insert email" /&gt;
+                    &lt;Label&gt;Update Email&lt;/Label&gt;
+                    &lt;Input type="text" name="email" onChange={handleChange} value={editGym.email} placeholder="insert email" /&gt;
                 &lt;/FormGroup&gt;
                 &lt;FormGroup&gt;
-                    &lt;Label&gt;Deal&lt;/Label&gt;
-                    &lt;Input type="text" name="deal" onChange={handleChange} placeholder="insert deal" /&gt;
+                    &lt;Label&gt;Update Deals&lt;/Label&gt;
+                    &lt;Input type="text" name="deal" onChange={handleChange} value={editGym.deal} placeholder="insert deal" /&gt;
                 &lt;/FormGroup&gt;
                 &lt;FormGroup&gt;
-                    &lt;Label&gt;Deal code&lt;/Label&gt;
-                    &lt;Input type="text" name="deal_code" onChange={handleChange} placeholder="insert deal code" /&gt;
+                    &lt;Label&gt;Update Deal code&lt;/Label&gt;
+                    &lt;Input type="text" name="deal_code" onChange={handleChange} value={editGym.deal_code} placeholder="insert deal code" /&gt;
                 &lt;/FormGroup&gt;
                 &lt;FormGroup&gt;
-                    &lt;Label&gt;Image&lt;/Label&gt;
-                    &lt;Input type="text" name="image" onChange={handleChange} placeholder="insert image" /&gt;
+                    &lt;Label&gt;Update or add an Image&lt;/Label&gt;
+                    &lt;Input type="text" name="image" onChange={handleChange} value={editGym.image} placeholder="insert image" /&gt;
                 &lt;/FormGroup&gt;
-&nbsp;
-                &lt;Button onClick={handleSubmit} name="submit"&gt;submit&lt;/Button&gt;
-&nbsp;
+                &lt;Button onClick={handleSubmit} name="submit" &gt;submit Edit&lt;/Button&gt;
+                &lt;Button onClick={handleSubmit} name="delete"&gt;delete&lt;/Button&gt;
             &lt;/Form&gt;
         &lt;/&gt;
     )
 }
 &nbsp;
-export default GymNew</pre></td></tr></table></pre>
+export default GymEdit</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
