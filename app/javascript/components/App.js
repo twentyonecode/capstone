@@ -32,7 +32,6 @@ const App = (props) => {
   }
 
   const readGyms = () => {
-    console.log("flag", gyms)
     fetch("/gyms")
       .then((response) => response.json())
       .then((payload) => {

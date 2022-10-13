@@ -6,11 +6,7 @@ import { useParams, NavLink } from "react-router-dom"
 const GymShow = ({ gyms }) => {
     const { id } = useParams()
     const currentGym = gyms?.find(gym => gym.id === +id)
-    // const handleDelete = () => {
-    //   deleteNpc(id)
-    //   console.log(npcObj)
-    // }
-    
+
     return (
         <div> 
         <Card color="dark" outline style={{ width: '14rem' }}>
