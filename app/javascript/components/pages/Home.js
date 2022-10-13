@@ -18,8 +18,7 @@ const Home = () => {
         </Button>
         <p>A place to list or get the best fitness deals in town.</p>
       <div>
-        <img src ="https://i.ibb.co/zVycnj1/Gym-Rat-deals.png"></img>
-        <p>Save money, lift better!</p>
+        <img src = "https://i.ibb.co/qWBdps8/gymratlogo.png" className="Logo" alt="Logo"></img>
       </div>
       </div>
     </div>
