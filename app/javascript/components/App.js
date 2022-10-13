@@ -12,14 +12,13 @@ import GymNew from "./pages/GymNew"
 
 const App = (props) => {
 
-  const [gyms, setGyms] = useState(mockGyms)
+  const [gyms, setGyms] = useState([])
 
   useEffect(() => {
     readGyms()
   }, [])
 
   const createGym = (gym) => {
-    console.log("this is a flag", JSON.stringify(gym))
     fetch("/gyms", {
       body: JSON.stringify(gym),
       headers: {
@@ -54,6 +53,19 @@ const App = (props) => {
       .then((payload) => readGyms())
       .catch((errors) => console.log("Gym update errors:", errors))
   }
+  const deleteGym = (id) => {
+    fetch(`/gyms/${id}`, {
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "DELETE"
+    })
+      .then((response) => response.json())
+      .then((payload) => readGyms())
+      .catch((error) => console.log("Gym delete errors:", error))
+      .finally(() => readGyms());
+  }
+
   return (
     <BrowserRouter>
 
@@ -63,7 +75,7 @@ const App = (props) => {
         <Route path="/" element={<Home />} />
         <Route path="/gymindex" element={<GymIndex gyms={gyms} />} />
         <Route path="/protectedgymindex" element={<ProtectedGymIndex gyms={gyms} {...props} />} />
-        <Route path="/gymedit/:id" element={<GymEdit gyms={gyms} updateGym={updateGym} currentUser={props.current_user} />} />
+        <Route path="/gymedit/:id" element={<GymEdit gyms={gyms} updateGym={updateGym} currentUser={props.current_user} deleteGym={deleteGym}/>} />
         <Route path="/gymnew" element={<GymNew createGym={createGym} currentUser={props.current_user} />} />
         <Route path="/gymshow/:id" element={<GymShow gyms={gyms} />} />
         <Route path="/*" element={<NotFound />} />

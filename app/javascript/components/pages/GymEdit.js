@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Form, FormGroup, Input, Label, Button } from "reactstrap";
 import { useParams, useNavigate, NavLink } from 'react-router-dom'
 
-const GymEdit = ({ gyms, currentUser, updateGym }) => {
+
+const GymEdit = ({ gyms, currentUser, updateGym, deleteGym }) => {
     console.log("currentUser", currentUser)
     const { id } = useParams()
     const currentGym = gyms?.find(gym => gym.id === +id)
@@ -29,6 +30,11 @@ const GymEdit = ({ gyms, currentUser, updateGym }) => {
     }
     const handleSubmit = () => {
         updateGym(editGym, currentGym.id)
+    }
+    const handleDelete = () => {
+        deleteGym(currentGym.id)
+        // navigate("/protectedgymindex)
+        console.log(currentGym.id)
     }
 
     return (
@@ -84,7 +90,7 @@ const GymEdit = ({ gyms, currentUser, updateGym }) => {
                     <Input type="text" name="image" onChange={handleChange} value={editGym.image} placeholder="insert image" />
                 </FormGroup>
                 <Button onClick={handleSubmit} name="submit" >submit Edit</Button>
-                <Button onClick={handleSubmit} name="delete">delete</Button>
+                <Button onClick={handleDelete} name="delete">delete</Button>
             </Form>
         </>
     )
