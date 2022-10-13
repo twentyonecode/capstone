@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Form, FormGroup, Input, Label, Button } from "reactstrap";
-import { NavLink, useNavigate, Redirect, Route } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 const GymNew = ({ createGym, currentUser }) => {
+    const navigate = useNavigate()
     const [submitted, setSubmitted] = useState(false)
     console.log("currentUser", currentUser)
     const [newGym, setNewGym] = useState({
@@ -27,6 +28,7 @@ const GymNew = ({ createGym, currentUser }) => {
         e.preventDefault()
         createGym(newGym)
         setSubmitted(true)
+        navigate("/gymindex")
     }
 
     return (
