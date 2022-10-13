@@ -14,7 +14,7 @@ const Navigation = ({
       <Nav
       card
       fill
-      tabs
+      
       >
         <NavItem>
           <NavLink to="/" className="nav-link">
