@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Form, FormGroup, Input, Label, Button } from "reactstrap";
+import { NavLink, useNavigate, Redirect, Route } from "react-router-dom";
 
-const GymNew = ({ createGym, currentUser } ) => {
+const GymNew = ({ createGym, currentUser }) => {
+    const [submitted, setSubmitted] = useState(false)
     console.log("currentUser", currentUser)
     const [newGym, setNewGym] = useState({
         gym_name: "",
@@ -21,66 +23,68 @@ const GymNew = ({ createGym, currentUser } ) => {
     const handleChange = (e) => {
         setNewGym({ ...newGym, [e.target.name]: e.target.value })
     }
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault()
         createGym(newGym)
+        setSubmitted(true)
     }
 
     return (
         <>
+            {/* {submitted ? <Redirect to="/protectedgymindex" /> : null} */}
             <h2>Add a gym</h2>
             <Form>
                 <FormGroup>
                     <Label>gym name</Label>
-                    <Input type="text" name="gym_name" onChange={handleChange} placeholder="insert gym name"/>
+                    <Input type="text" name="gym_name" onChange={handleChange} placeholder="insert gym name" />
                 </FormGroup>
                 <FormGroup>
                     <Label>store code</Label>
-                    <Input type="text" name="store_code" onChange={handleChange} placeholder="insert store code"/>
+                    <Input type="text" name="store_code" onChange={handleChange} placeholder="insert store code" />
                 </FormGroup>
                 <FormGroup>
                     <Label>Hours of operation</Label>
-                    <Input type="text" name="hours_of_operations" onChange={handleChange} placeholder="insert hours of operation"/>
+                    <Input type="text" name="hours_of_operations" onChange={handleChange} placeholder="insert hours of operation" />
                 </FormGroup>
                 <FormGroup>
                     <Label>Phone number</Label>
-                    <Input type="text" name="phone_number" onChange={handleChange} placeholder="insert phone number"/>
+                    <Input type="text" name="phone_number" onChange={handleChange} placeholder="insert phone number" />
                 </FormGroup>
                 <FormGroup>
                     <Label>Features</Label>
-                    <Input type="text" name="features" onChange={handleChange} placeholder="insert features"/>
+                    <Input type="text" name="features" onChange={handleChange} placeholder="insert features" />
                 </FormGroup>
                 <FormGroup>
                     <Label>Street</Label>
-                    <Input type="text" name="street" onChange={handleChange} placeholder="insert street"/>
+                    <Input type="text" name="street" onChange={handleChange} placeholder="insert street" />
                 </FormGroup>
                 <FormGroup>
                     <Label>City</Label>
-                    <Input type="text" name="city" onChange={handleChange} placeholder="insert city"/>
+                    <Input type="text" name="city" onChange={handleChange} placeholder="insert city" />
                 </FormGroup>
                 <FormGroup>
                     <Label>State</Label>
-                    <Input type="text" name="state" onChange={handleChange} placeholder="insert state"/>
+                    <Input type="text" name="state" onChange={handleChange} placeholder="insert state" />
                 </FormGroup>
                 <FormGroup>
                     <Label>Email</Label>
-                    <Input type="text" name="email" onChange={handleChange} placeholder="insert email"/>
+                    <Input type="text" name="email" onChange={handleChange} placeholder="insert email" />
                 </FormGroup>
                 <FormGroup>
                     <Label>Deal</Label>
-                    <Input type="text" name="deal" onChange={handleChange} placeholder="insert deal"/>
+                    <Input type="text" name="deal" onChange={handleChange} placeholder="insert deal" />
                 </FormGroup>
                 <FormGroup>
                     <Label>Deal code</Label>
-                    <Input type="text" name="deal_code" onChange={handleChange} placeholder="insert deal code"/>
+                    <Input type="text" name="deal_code" onChange={handleChange} placeholder="insert deal code" />
                 </FormGroup>
                 <FormGroup>
                     <Label>Image</Label>
-                    <Input type="text" name="image" onChange={handleChange} placeholder="insert image"/>
+                    <Input type="text" name="image" onChange={handleChange} placeholder="insert image" />
                 </FormGroup>
-                
-                <Button onClick={handleSubmit} name="submit">
-                    submit
-                </Button>
+
+                <Button onClick={handleSubmit} name="submit">submit</Button>
+
             </Form>
         </>
     )
