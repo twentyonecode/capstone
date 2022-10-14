@@ -10,7 +10,7 @@ import ProtectedGymIndex from "./pages/ProtectedGymIndex"
 import GymEdit from "./pages/GymEdit"
 import GymShow from "./pages/GymShow"
 import GymNew from "./pages/GymNew"
-
+import AboutUs from "./pages/AboutUs"
 
 const App = (props) => {
 
@@ -79,6 +79,7 @@ const App = (props) => {
         <Route path="/gymedit/:id" element={<GymEdit gyms={gyms} updateGym={updateGym} currentUser={props.current_user} deleteGym={deleteGym}/>} />
         <Route path="/gymnew" element={<GymNew createGym={createGym} currentUser={props.current_user} />} />
         <Route path="/gymshow/:id" element={<GymShow gyms={gyms} />} />
+        <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
