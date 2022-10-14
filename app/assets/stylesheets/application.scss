@@ -3,60 +3,155 @@
 body {
     text-align: center;
     background-color: #737373;
-    
+    background-image: url("https://images.unsplash.com/photo-1593079831268-3381b0db4a77?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80");
+
 }
 
-h1{
-    color: black;
+h1 {
+    color: orange;
     margin: 30px;
-    font-family:'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif;
     font-size: 50px;
 }
+
 h2 {
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: orange;
 }
 
 p {
-    color: purple;
+    color: whitesmoke;
     font-size: 25px;
 }
 
-.home-see-deal-button{
-    color : rgb(16, 14, 14);
+.home-see-deal-button {
+    color: rgb(16, 14, 14);
 }
 
 .box {
     margin: 30px;
-    background-color:rgba(59,173,227,1);
-    background: linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+    background-color: rgba(59, 173, 227, 1);
+    background: linear-gradient(45deg, rgb(248, 250, 250) 0%, rgb(93, 96, 105) 25%, rgb(70, 66, 72) 51%, rgb(245, 240, 241) 100%);
     letter-spacing: 4px;
-    box-shadow: 0 0 5px #03e9f4,
-                0 0 25px #03e9f4,
-                0 0 50px #03e9f4,
-                0 0 200px #03e9f4;
-    -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
-    
+    box-shadow: 0 0 5px whitesmoke,
+        0 0 25px white,
+        0 0 50px whitesmoke,
+        0 0 200px white;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+
 }
 
 .nav-link {
-    color: #03e9f4;
-    &:hover{
-        color: white;
-        box-shadow: 0 0 5px #03e9f4,
-        0 0 25px #03e9f4,
-        0 0 50px #03e9f4,
-        0 0 200px #03e9f4;
--webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+    color: gray;
+
+    &:hover {
+        color: orange;
+        box-shadow: 0 0 5px gray,
+            0 0 25px gray,
+            0 0 50px gray,
+            0 0 200px gray;
+        -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
     }
 
 }
 
 
-img{
-    margin-top: -20px;
+img {
+    margin-top: 0px;
 }
 
 .notFound {
     margin: -20px;
+}
+
+.Logo {
+    margin: 40px;
+    background: transparent;
+    background-blend-mode: soft-light;
+}
+
+main.gym-index-cards {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+
+.card {
+    margin: 20px;
+
+    &:hover {
+        box-shadow: 0 0 5px orange,
+            0 0 25px whitesmoke,
+            0 0 50px white,
+            0 0 200px whitesmoke;
+        -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+    }
+}
+
+.addText {
+    color: orange;
+}
+
+
+.button-index-see-more {
+    color: orange;
+
+    &:hover {
+        box-shadow: 0 0 5px orange,
+            0 0 25px whitesmoke,
+            0 0 50px white,
+            0 0 200px whitesmoke;
+        -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+    }
+}
+
+.gym-name {
+    color: whitesmoke;
+}
+
+.card-body {
+    background-color: black;
+    font-size: 30px;
+    border: 10px;
+    color: black;
+
+    &:hover {
+        box-shadow: 0 0 5px orange,
+            0 0 25px whitesmoke,
+            0 0 50px white,
+            0 0 200px whitesmoke;
+        -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+    }
+}
+
+.card-text {
+    color: orange;
+}
+
+.edit-text {
+    font-size: small;
+}
+
+.style-card-show {
+    font-size: xx-small;
+}
+
+.down-button {
+    margin-bottom: 15px;
+    flex: none;
+    justify-content: center;
+    align-items: baseline;
+
+}
+
+.card-light-img {
+    height: 150px;
+}
+
+.card-midi {
+    display: flex;
+    justify-content: center;
+    align-items: center
 }

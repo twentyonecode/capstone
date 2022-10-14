@@ -1,0 +1,69 @@
+@import "bootstrap";
+
+body {
+    text-align: center;
+    // background-image: url("https://i.pinimg.com/474x/01/9d/60/019d60de783c518397aba045999d2124.jpg");
+    // background-position: cover;
+    // background: url("https://i.pinimg.com/474x/01/9d/60/019d60de783c518397aba045999d2124.jpg") no-repeat center center fixed; 
+    // -webkit-background-size: cover;
+    // -moz-background-size: cover;
+    // -o-background-size: cover;
+    // background-size: cover;
+    
+    
+}
+
+h1{
+    color: orange;
+    margin: 30px;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 50px;
+}
+h2 {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: orange;
+}
+
+p {
+    color: #cd3c07;
+    font-size: 25px;
+}
+
+.home-see-deal-button{
+    color : rgb(16, 14, 14);
+}
+
+.box {
+    margin: 30px;
+    background-color:rgba(59,173,227,1);
+    background: linear-gradient(45deg, rgb(241, 86, 9) 0%, rgb(230, 87, 189) 25%, rgb(183, 68, 114) 51%, rgb(229, 22, 39) 100%);
+    letter-spacing: 4px;
+    box-shadow: 0 0 5px #cd3c07,
+                0 0 25px #cd3c07,
+                0 0 50px #cd3c07,
+                0 0 200px #cd3c07;
+    -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+    
+}
+
+.nav-link {
+    color: #cd3c07;
+    &:hover{
+        color: white;
+        box-shadow: 0 0 5px #03e9f4,
+        0 0 25px #03e9f4,
+        0 0 50px #03e9f4,
+        0 0 200px #03e9f4;
+-webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+    }
+
+}
+
+
+img{
+    margin-top: -20px;
+}
+
+.notFound {
+    margin: -20px;
+}

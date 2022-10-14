@@ -3,12 +3,14 @@ import GymIndex from "./pages/GymIndex"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import mockGyms from "./mockGyms"
 import Header from "./components/Header"
+import Footer from "./components/Footer"
 import Home from "./pages/Home"
 import NotFound from "./pages/NotFound"
 import ProtectedGymIndex from "./pages/ProtectedGymIndex"
 import GymEdit from "./pages/GymEdit"
 import GymShow from "./pages/GymShow"
 import GymNew from "./pages/GymNew"
+
 
 const App = (props) => {
 
