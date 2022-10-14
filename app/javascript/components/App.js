@@ -64,6 +64,7 @@ const App = (props) => {
       .then((response) => response.json())
       .then((payload) => readGyms())
       .catch((error) => console.log("Gym delete errors:", error))
+      .finally(() => readGyms())
   }
 
   return (

@@ -4,6 +4,7 @@ import { useParams, useNavigate, NavLink } from 'react-router-dom'
 
 
 const GymEdit = ({ gyms, currentUser, updateGym, deleteGym }) => {
+    const navigate = useNavigate()
     console.log("currentUser", currentUser)
     const { id } = useParams()
     const currentGym = gyms?.find(gym => gym.id === +id)
@@ -30,11 +31,12 @@ const GymEdit = ({ gyms, currentUser, updateGym, deleteGym }) => {
     }
     const handleSubmit = () => {
         updateGym(editGym, currentGym.id)
+        navigate("/protectedgymindex")
     }
     const handleDelete = () => {
         deleteGym(currentGym.id)
-        // navigate("/protectedgymindex)
-        console.log(currentGym.id)
+        navigate("/protectedgymindex")
+        
     }
 
     return (
@@ -91,6 +93,13 @@ const GymEdit = ({ gyms, currentUser, updateGym, deleteGym }) => {
                 </FormGroup>
                 <Button onClick={handleSubmit} name="submit" >submit Edit</Button>
                 <Button onClick={handleDelete} name="delete">delete</Button>
+                <Button color="primary" size="lg">                                   
+                <NavLink to='/protectedgymindex'>
+                <div className="button-index-see-more">
+                    Cancel!
+                </div>
+            </NavLink>
+            </Button>
             </Form>
         </>
     )
