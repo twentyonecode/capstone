@@ -75,7 +75,80 @@ main.gym-index-cards {
     margin-top: 20px;
 }
 
+
 .card {
     margin: 20px;
+    &:hover{
+        box-shadow: 0 0 5px orange,
+        0 0 25px whitesmoke,
+        0 0 50px white,
+        0 0 200px whitesmoke;
+-webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+    }
 }
+
+.addText {
+    color: orange;
+}
+
+
+.button-index-see-more {
+    color: orange;
+    &:hover{
+        box-shadow: 0 0 5px orange,
+        0 0 25px whitesmoke,
+        0 0 50px white,
+        0 0 200px whitesmoke;
+-webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+    }
+}
+
+.gym-name {
+    color: whitesmoke;
+}
+
+.card-body {
+    background-color: black;
+    font-size: 30px;
+    border: 10px;
+    color: black;
+    &:hover{
+        box-shadow: 0 0 5px orange,
+        0 0 25px whitesmoke,
+        0 0 50px white,
+        0 0 200px whitesmoke;
+-webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+    }
+}
+
+.card-text {
+    color: orange;
+}
+
+.edit-text{
+    font-size: small;
+}
+
+.style-card-show {
+    font-size: xx-small;
+}
+
+.down-button {
+    margin-bottom: 15px;
+    flex: none;
+    justify-content: center;
+    align-items: baseline;
+
+}
+
+.card-light-img {
+    height: 150px;
+}
+
+
+
+
+
+
+
 

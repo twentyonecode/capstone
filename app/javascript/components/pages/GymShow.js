@@ -17,6 +17,7 @@ const GymShow = ({ gyms }) => {
                 {currentGym.gym_name}
             </CardTitle>
             </div>
+            
             <CardText>Store Code: {currentGym.store_code}</CardText>
             <CardText>Hours: {currentGym.hours_of_operations}</CardText>
             <CardText>Phone: {currentGym.phone_number}</CardText>
@@ -26,8 +27,8 @@ const GymShow = ({ gyms }) => {
             <CardText>State: {currentGym.state}</CardText>
             <CardText>Email: {currentGym.email}</CardText>
             <CardText>Deals: {currentGym.deal}</CardText>
-            <CardText>Code: {currentGym.deal_code}</CardText>            
-            <Button color="primary" size="lg">                                   
+            <CardText>Code: {currentGym.deal_code}</CardText>  
+            <Button size="lg">                                 
                 <NavLink to='/gymindex'>
                 <div className="button-index-see-more">
                     Return to deals!

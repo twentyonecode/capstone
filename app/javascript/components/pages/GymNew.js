@@ -33,7 +33,7 @@ const GymNew = ({ createGym, currentUser }) => {
         <>
             {/* {submitted ? <Redirect to="/protectedgymindex" /> : null} */}
             <h2>Add a gym</h2>
-            <Form>
+            <Form className= "addText">
                 <FormGroup>
                     <Label>gym name</Label>
                     <Input type="text" name="gym_name" onChange={handleChange} placeholder="insert gym name" />

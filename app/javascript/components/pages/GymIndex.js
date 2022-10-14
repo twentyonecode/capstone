@@ -9,15 +9,16 @@ const GymIndex = ({ gyms }) => {
         <main className="gym-index-cards">
             {gyms?.map((gym, index) => {
                 return (
-                    <Card
+                    <Card className="card-style-index"
                         color="dark"
                         outline
                         style={{
                             width: '14rem'
+                        
                         }}
                         key={index}
                     >
-                        <img
+                        <img className="card-light-img"
                             alt=""
                             src={gym.image}
                         />
@@ -28,7 +29,7 @@ const GymIndex = ({ gyms }) => {
                                 </CardTitle>
                             </div>
                             <CardText>Deal: {gym.deal}</CardText>
-                            <Button color="primary" size="lg">
+                            <Button size="lg">
                                 <NavLink to={`/gymshow/${gym.id}`}>
                                     <div className="button-index-see-more">
                                         claim your deal
