@@ -36,7 +36,7 @@ const GymEdit = ({ gyms, currentUser, updateGym, deleteGym }) => {
     const handleDelete = () => {
         deleteGym(currentGym.id)
         navigate("/protectedgymindex")
-        
+
     }
 
     return (
@@ -92,14 +92,10 @@ const GymEdit = ({ gyms, currentUser, updateGym, deleteGym }) => {
                     <Input type="text" name="image" onChange={handleChange} value={editGym.image} placeholder="insert image" />
                 </FormGroup>
                 <Button onClick={handleSubmit} name="submit" >submit Edit</Button>
-                <Button onClick={handleDelete} name="delete">delete</Button>
-                <Button color="primary" size="lg">                                   
+                <Button color="danger" onClick={handleDelete} name="delete">delete</Button>
                 <NavLink to='/protectedgymindex'>
-                <div className="button-index-see-more">
-                    Cancel!
-                </div>
-            </NavLink>
-            </Button>
+                    <Button >Cancel</Button>
+                </NavLink>
             </Form>
         </>
     )

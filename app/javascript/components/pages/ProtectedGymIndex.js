@@ -29,14 +29,14 @@ const ProtectedGymIndex = ({ gyms, current_user }) => {
                                     </CardTitle>
                                 </div>
                                 <CardText>Deal: {gym.deal}</CardText>
-                                <Button color="primary" size="lg">
+                                <Button size="lg">
                                     <NavLink to={`/gymshow/${gym.id}`}>
                                         <div className="button-index-see-more">
-                                            claim your deal
+                                            View your gym
                                         </div>
                                     </NavLink>
                                 </Button>
-                                <Button color="primary" size="lg">
+                                <Button size="lg">
                                     <NavLink to={`/gymedit/${gym.id}`}>
                                         <div className="button-index-see-more">
                                             Update your gym
