@@ -1,8 +1,6 @@
-import React from "react"
-import { Card, CardBody, CardTitle, CardText, Button } from 'reactstrap'
-import { NavLink } from "react-router-dom"
-// need to add this file in the navigation file and also include the features for editing your gyms on this file.
-//also this requires a route path in the app.js
+import React from "react";
+import { Card, CardBody, CardTitle, CardText, Button, CardFooter } from "reactstrap";
+import { NavLink } from "react-router-dom";
 
 const ProtectedGymIndex = ({ gyms, current_user }) => {
     const filterGyms = gyms?.filter(gym => gym.user_id === current_user.id)
