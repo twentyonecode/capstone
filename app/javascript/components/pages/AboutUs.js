@@ -122,26 +122,3 @@ const AboutUs = () => {
 }
 
 export default AboutUs
-{/* <Card className="card-style-index"
-                        color="dark"
-                        outline
-                        style={{
-                            width: '14rem'
-                        
-                        }}
-                        key={index}
-                    >
-                        <img className="card-light-img"
-                            alt=""
-                            src={gym.image}
-                        />
-                        <CardBody>
-                            <div className="gym-name">
-                                <CardTitle>
-                                    {gym.gym_name}
-                                </CardTitle>
-                            </div>
-                            <CardText>Deal: {gym.deal}</CardText>
-                        </CardBody>
-                    </Card>
-                     */}
