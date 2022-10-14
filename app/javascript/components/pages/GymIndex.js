@@ -28,14 +28,20 @@ const GymIndex = ({ gyms }) => {
                                     {gym.gym_name}
                                 </CardTitle>
                             </div>
+                        </CardBody>
+
+                        <CardBody>
                             <CardText>Deal: {gym.deal}</CardText>
-                            <Button size="lg">
+                        </CardBody>
+
+                        <CardBody>
+                                <Button size="lg">
                                 <NavLink to={`/gymshow/${gym.id}`}>
                                     <div className="button-index-see-more">
                                         claim your deal
                                     </div>
                                 </NavLink>
-                            </Button>
+                                </Button>
                         </CardBody>
                     </Card>
 

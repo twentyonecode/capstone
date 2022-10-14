@@ -62,7 +62,7 @@ const Navigation = ({
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink to="" className="nav-link">
+          <NavLink to="/aboutus" className="nav-link">
             About Us
           </NavLink>
         </NavItem>
