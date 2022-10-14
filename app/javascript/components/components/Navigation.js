@@ -3,7 +3,7 @@ import { Nav, NavItem } from "reactstrap"
 import { NavLink } from "react-router-dom"
 
 const Navigation = ({
-    logged_in,
+  logged_in,
   current_user,
   new_user_route,
   sign_in_route,
@@ -12,36 +12,39 @@ const Navigation = ({
   return (
     <>
       <Nav
-      card
-      fill
-      
+        card
+        fill
+
       >
         <NavItem>
           <NavLink to="/" className="nav-link">
-          Home
+            Home
+          </NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink to="/gymindex" className="nav-link">
+            See the deals!
           </NavLink>
         </NavItem>
         {logged_in && (
           <NavItem>
-            <a href={sign_out_route} className="nav-link">
-              Sign Out
-            </a>
-          </NavItem>
-          )}
-          {logged_in &&(
-          <NavItem>
-           <NavLink to="protectedgymindex"  className="nav-link">
+            <NavLink to="protectedgymindex" className="nav-link">
               My gyms deals
             </NavLink>
           </NavItem>
-          )}
-              {logged_in && (
-              <NavItem>
-                <NavLink to="/gymnew" className="nav-link">
-                  Add a Gym
-                </NavLink>
-              </NavItem>
-            )}
+        )}
+        {logged_in && (
+          <NavItem>
+            <NavLink to="/gymnew" className="nav-link">
+              Add a Gym
+            </NavLink>
+          </NavItem>
+        )}
+        <NavItem>
+          <NavLink to="/aboutus" className="nav-link">
+            About Us
+          </NavLink>
+        </NavItem>
         {!logged_in && (
           <NavItem>
             <a href={sign_in_route} className="nav-link">
@@ -56,19 +59,17 @@ const Navigation = ({
             </a>
           </NavItem>
         )}
-        <NavItem>
-          <NavLink to="/gymindex" className="nav-link">
-            See the deals!
-          </NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink to="/aboutus" className="nav-link">
-            About Us
-          </NavLink>
-        </NavItem>
-        
+
+
+        {logged_in && (
+          <NavItem>
+            <a href={sign_out_route} className="nav-link">
+              Sign Out
+            </a>
+          </NavItem>
+        )}
       </Nav>
-  </>
+    </>
   )
 }
 
