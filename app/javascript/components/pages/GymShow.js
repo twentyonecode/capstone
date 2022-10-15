@@ -46,4 +46,5 @@ const GymShow = ({ gyms }) => {
     )
 }
 
+
 export default GymShow
