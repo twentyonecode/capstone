@@ -91,7 +91,7 @@ const GymEdit = ({ gyms, currentUser, updateGym, deleteGym }) => {
                     <Label>Update or add an Image</Label>
                     <Input className="input-field" type="text" name="image" onChange={handleChange} value={editGym.image} placeholder="insert image" />
                 </FormGroup>
-                <Button onClick={handleSubmit} name="submit" >submit Edit</Button>
+                <Button color="warning" onClick={handleSubmit} name="submit" >submit Edit</Button>
                 <Button color="danger" onClick={handleDelete} name="delete">delete</Button>
                 <NavLink to='/protectedgymindex'>
                     <Button >Cancel</Button>
