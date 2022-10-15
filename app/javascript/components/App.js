@@ -12,6 +12,7 @@ import GymShow from "./pages/GymShow"
 import GymNew from "./pages/GymNew"
 import AboutUs from "./pages/AboutUs"
 
+
 const App = (props) => {
 
   const [gyms, setGyms] = useState([])

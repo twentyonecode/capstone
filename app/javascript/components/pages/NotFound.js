@@ -12,7 +12,7 @@
             <h2>Page Not Found</h2>
             <p>Hey Gym Rat! There are no deals on this page.</p>
             <p>Please click Home to see better deals!</p>
-            <img src = "https://i.ibb.co/6XFZCH4/Gym-Rat-deals-1.jpg" className = "notFound"></img>
+            <img src = "" className = "notFound"></img>
         </div>
     )
     }
