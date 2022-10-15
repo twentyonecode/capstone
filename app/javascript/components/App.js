@@ -83,6 +83,7 @@ const App = (props) => {
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   )
 }
