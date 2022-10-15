@@ -19,7 +19,7 @@ const Home = () => {
         </Button>
        <h2>Before you trim the fat, Save money with Gym Rat!</h2>
       <div>
-        <img src = "https://i.ibb.co/qWBdps8/gymratlogo.png" className="Logo" alt="Logo"></img>
+        <img src ="/GRDlogo.png" className="Logo" alt="Logo"></img>
       </div>
       </div>
     </div>
