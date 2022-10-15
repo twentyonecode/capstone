@@ -43,51 +43,51 @@ const GymEdit = ({ gyms, currentUser, updateGym, deleteGym }) => {
         <>
             <h2>Edit your gym</h2>
             <Form>
-                <FormGroup>
+                <FormGroup className= "addText">
                     <Label>gym name</Label>
                     <Input type="text" name="gym_name" onChange={handleChange} value={editGym.gym_name} placeholder="Update your gym name" />
                 </FormGroup>
-                <FormGroup>
+                <FormGroup className= "addText">
                     <Label>store code</Label>
                     <Input type="text" name="store_code" onChange={handleChange} value={editGym.store_code} placeholder="insert store code" />
                 </FormGroup>
-                <FormGroup>
+                <FormGroup className= "addText">
                     <Label>Update Gym Hours</Label>
                     <Input type="text" name="hours_of_operations" onChange={handleChange} values={editGym.hours_of_operations} placeholder="insert hours of operation" />
                 </FormGroup>
-                <FormGroup>
+                <FormGroup className= "addText">
                     <Label>Update Phone number</Label>
                     <Input type="text" name="phone_number" onChange={handleChange} value={editGym.phone_number} placeholder="insert phone number" />
                 </FormGroup>
-                <FormGroup>
+                <FormGroup className= "addText">
                     <Label>Update Features</Label>
                     <Input type="text" name="features" onChange={handleChange} value={editGym.features} placeholder="insert features" />
                 </FormGroup>
-                <FormGroup>
+                <FormGroup className= "addText">
                     <Label>Street</Label>
                     <Input type="text" name="street" onChange={handleChange} value={editGym.street} placeholder="insert street" />
                 </FormGroup>
-                <FormGroup>
+                <FormGroup className= "addText">
                     <Label>City</Label>
                     <Input type="text" name="city" onChange={handleChange} value={editGym.city} placeholder="insert city" />
                 </FormGroup>
-                <FormGroup>
+                <FormGroup className= "addText">
                     <Label>State</Label>
                     <Input type="text" name="state" onChange={handleChange} value={editGym.state} placeholder="insert state" />
                 </FormGroup>
-                <FormGroup>
+                <FormGroup className= "addText">
                     <Label>Update Email</Label>
                     <Input type="text" name="email" onChange={handleChange} value={editGym.email} placeholder="insert email" />
                 </FormGroup>
-                <FormGroup>
+                <FormGroup className= "addText">
                     <Label>Update Deals</Label>
                     <Input type="text" name="deal" onChange={handleChange} value={editGym.deal} placeholder="insert deal" />
                 </FormGroup>
-                <FormGroup>
+                <FormGroup className= "addText">
                     <Label>Update Deal code</Label>
                     <Input type="text" name="deal_code" onChange={handleChange} value={editGym.deal_code} placeholder="insert deal code" />
                 </FormGroup>
-                <FormGroup>
+                <FormGroup className= "addText">
                     <Label>Update or add an Image</Label>
                     <Input type="text" name="image" onChange={handleChange} value={editGym.image} placeholder="insert image" />
                 </FormGroup>
