@@ -18,7 +18,7 @@ const ProtectedGymIndex = ({ gyms, current_user }) => {
                             }}
                             key={index}
                         >
-                            <img
+                            <img className="card-light-img"
                                 alt=""
                                 src={gym.image}
                             />
