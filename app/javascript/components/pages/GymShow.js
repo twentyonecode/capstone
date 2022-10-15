@@ -12,12 +12,13 @@ const GymShow = ({ gyms }) => {
             <Card color="dark" outline style={{ width: '50rem' }}>
                 <img alt="" src={currentGym.image} />
                 <CardBody>
-                    <div className="gym-name">
-                        <CardTitle>
-                            {currentGym.gym_name}
-                        </CardTitle>
-                    </div>
-
+                    <CardBody className="title-background">
+                        <div className="gym-name">
+                            <CardTitle className="show-text">
+                                {currentGym.gym_name}
+                            </CardTitle>
+                        </div>
+                    </CardBody>
                     <CardText>Store Code: {currentGym.store_code}</CardText>
                     <CardText>Hours: {currentGym.hours_of_operations}</CardText>
                     <CardText>Phone: {currentGym.phone_number}</CardText>
@@ -27,7 +28,11 @@ const GymShow = ({ gyms }) => {
                     <CardText>State: {currentGym.state}</CardText>
                     <CardText>Email: {currentGym.email}</CardText>
                     <CardText>Deals: {currentGym.deal}</CardText>
-                    <CardText>Code: {currentGym.deal_code}</CardText>
+                    <CardText >CODE:
+                        <div className="code-color">
+                            {currentGym.deal_code}
+                        </div>
+                    </CardText>
                     <Button size="lg">
                         <NavLink to='/gymindex'>
                             <div className="button-index-see-more">
@@ -37,7 +42,7 @@ const GymShow = ({ gyms }) => {
                     </Button>
                 </CardBody>
             </Card>
-        </div>
+        </div >
     )
 }
 
