@@ -11,7 +11,7 @@
             <br></br>
             <h2>Page Not Found</h2>
             <p>Hey Gym Rat! There are no deals on this page.</p>
-            <p>Please click Home to see better deals!</p>
+            <p>Please click Home to return to the home page.</p>
             <img src = "" className = "notFound"></img>
         </div>
     )

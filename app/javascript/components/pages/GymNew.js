@@ -85,7 +85,7 @@ const GymNew = ({ createGym, currentUser }) => {
                     <Input className="input-field" type="text" name="image" onChange={handleChange} placeholder="insert image" />
                 </FormGroup>
 
-                <Button onClick={handleSubmit} name="submit">submit</Button>
+                <Button color="warning" onClick={handleSubmit} name="submit">submit</Button>
 
             </Form>
         </>
