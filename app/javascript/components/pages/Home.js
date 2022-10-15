@@ -8,7 +8,8 @@ const Home = () => {
     
     <div>
         <h1>Welcome to Gym Rat Deals!</h1>
-        <h2>Before you trim the fat, Save money with Gym Rat!</h2>
+         <p>A place to list or get the best fitness deals in town.</p>
+        
       <div>
         <Button className = "box"
           size="lg">
@@ -16,9 +17,9 @@ const Home = () => {
             <div className = "home-see-deal-button">Click For Deals!</div>
           </NavLink>
         </Button>
-        <p>A place to list or get the best fitness deals in town.</p>
+       <h2>Before you trim the fat, Save money with Gym Rat!</h2>
       <div>
-        <img src = "https://i.ibb.co/qWBdps8/gymratlogo.png" className="Logo" alt="Logo"></img>
+        <img src ="/GRDlogo.png" className="Logo" alt="Logo"></img>
       </div>
       </div>
     </div>
