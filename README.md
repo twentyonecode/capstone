@@ -9,10 +9,15 @@ This is a "React-in-Rails" application which allows a Gym to create an account, 
 The current iteration of the app allows all users to be able to create an account and cards, however, the frontend sign up feature can be removed so that accounts can only be added in the backend by the developer. This would allow the app to be refocused on the business aspect where the app owner can offer gyms an account on the app to list their gym for a small fee. The exclusive deal code offered by the gym to the user provides valuable metrics to the gym on their "cost to acquire new customers".
 
 Future planned features: 
+
 	• User login to harvest user information
+	
 	• Impressions counter and clicked counter for gym cards
+	
 	• Health and fitness blog
+	
 	• Mailing list
+	
 
 INSTALLATION INSTRUCTIONS:
 
@@ -21,12 +26,18 @@ NOTE: You will need to have Ruby on Rails 7 installed
 In terminal, run the following commands
 
 $ git clone https://github.com/twentyonecode/gym-rat-deals.git 
+
 $ cd gym-rat-deals
+
 $ bundle
+
 $ yarn
+
 $ rails server
 
+
 NOTE: You may need to manually start a server depending on your operating environment. For Postgresql running in Windows Subsystem for Linux, you will have to do so by using the following command:
+
 $ sudo service postgresql start
 
 Open your web browser and navigate to "https://localhost:3000/" 
