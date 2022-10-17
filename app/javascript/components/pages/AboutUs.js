@@ -36,7 +36,7 @@ const AboutUs = () => {
         <Card style={{ width: '18rem'}}>
 
         <img alt="Card" 
-        src="https://picsum.photos/300/200"/>
+        src="https://i.imgur.com/d9vrHG9.jpeg"/>
 
         <CardBody>
             <CardTitle className="gym-name">
@@ -64,7 +64,7 @@ const AboutUs = () => {
         <Card style={{ width: '18rem'}}>
 
         <img alt="Card" 
-        src="https://picsum.photos/300/200"/>
+        src="https://i.ibb.co/Zd92QNG/IMG-6436.jpg"/>
 
         <CardBody>
             <CardTitle className="gym-name">
