@@ -8,7 +8,7 @@ const ProtectedGymIndex = ({ gyms, current_user }) => {
         <>
             <h1>My gyms</h1>
             <main className="gym-index-cards">
-                {filterGyms?.map((gym, index) => {
+                {gyms?.map((gym, index) => {
                     return (
                         <Card
                             color="dark"
